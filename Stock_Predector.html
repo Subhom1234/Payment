@@ -50,7 +50,7 @@
     <button type="submit" class="btn btn2" id="btn" onclick="sub()">Submit</button>
     </form>
        </form>
-    <span id="msg"></span>
+    <span id="success"></span>
     </div>
             <a href="10.html">
         <button id="btn0">Check Pack Details</button></a>
@@ -77,6 +77,26 @@
  location.reload();
   }
 </script>
+  <script>
+  
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwJAyrM3LBRvGt0m5d4qeaSxkOLAQxFlhe_CPVDOtzlMfZcWkMUvZm74kVo3yTcGkvSKw/exec'
+  
+  const form = document.forms['submit-to-google-sheet']
+  const success = document.getElementById('success')
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        success.innerHTML = "Data Successfully Submitted";
+        setTimeout(function() {
+          success.innerHTML = "";
+        }, 5000)
+        form.reset();
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+  
+  </script>
 <script>
   
 </script>
