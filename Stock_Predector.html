@@ -123,6 +123,9 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       .then(response => {
         success.innerHTML = "Data Successfully Submitted";
+           document.getElementById('cover').style.display = 'none';
+        document.getElementById('middle').style.display = 'block';
+        document.getElementById('Conferm_Page').style.display = 'block';
         setTimeout(function() {
           success.innerHTML = "";
         }, 5000)
