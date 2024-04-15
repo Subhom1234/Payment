@@ -15,6 +15,8 @@
 </head>
 <body>
   <div class="cover" id="cover">
+        <div id="cv1">
+      
     <h1><u>Web Develop</u></h1>
 <a href="IMG_20240411_162425.jpg" download><button id="qr"></button></a>
 <p id="p"><b>Click Image For Download Qr</b></p>
@@ -65,7 +67,17 @@
   </div></a>
   </div>
 <div>
-  
+</div>
+    <div id="link">
+    <font id="txt"><b>    <h3>....Payment Successful....</h3>
+        We will contact you Within 7 Working Days.<br><br><br>
+        <h3>
+          If Any Problem Contact</h3><br><br>
+        <label for="Tel" id="t"><b>Mobile Number :</b> </label>
+        <a href="tel:+916290511750">6290511750</a><br><br>
+        <label for=mail id="t"> <b>Mail :</b> </label>
+        <a href="mailto: subhomkole5@gmail.com">subhomkole5@gmail.com</a>
+          </div>
 </div>
 </body>
   <script>
@@ -86,6 +98,9 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       .then(response => {
         success.innerHTML = "Data Successfully Submitted";
+        document.getElementById('cv1').style.display = 'none';
+        
+        document.getElementById('link').style.display = 'block';
         setTimeout(function() {
           success.innerHTML = "";
         }, 5000)
