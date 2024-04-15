@@ -14,30 +14,14 @@
        #blue_link{
      color: #0973FF;
     }
-      #Conferm_Page{
-        
-        
-    width: 100%;
-    height: 100vh;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-  }
-  #middle{
-    display: none;
-    
-    text-align: center;
-    margin-top: -20vh;
-    width: 80%;
-    height: 20vh;
-    background-color: transparent;
-  }
+
   </style>
 </head>
 <body>
   <div class="cover" id="cover">
+    <div id="cv1">
+      
+
     <h1><u>Stock Predector</u></h1>
 <a href="IMG_20240411_162425.jpg" download><button id="qr"></button></a>
 <p id="p"><b>Click Image For Download Qr</b></p>
@@ -71,7 +55,7 @@
         <b>Remark</b><br>
     <textarea name="Remark" rows="2" placeholder="Your Remark"></textarea>
     <br><br>
-               <input type="checkbox" name="Terms & condition" id="Terms & condition" required><a href="Terms_and_condition.html" id="blue_link">Terms & condition</a>
+               <input type="checkbox" name="Terms & condition" id="Terms & condition" required><a href="Terms_and_condition.html" id="blue_link">   Terms & condition</a>
         <br><br>
             <span id="success"></span><br><br>
     <button type="submit" class="btn btn2" id="btn" onclick="sub()">Submit</button>
@@ -94,10 +78,9 @@
   <div id="copyright">
     Copyright Ⓒ Subhom 2024
   </div></a>
-  </div>
-<div id="Conferm_Page">
-  <div id="middle">
-    <h3>....Payment Successful....</h3>
+      </div>
+  <div id="link">
+    <font id="txt"><b>    <h3>....Payment Successful....</h3>
         You Recive Your User Name And Password Within 7 Working Days.<br><br><br>
         <h3>
           If Any Problem Contact</h3><br><br>
@@ -105,8 +88,9 @@
         <a href="tel:+916290511750">6290511750</a><br><br>
         <label for=mail id="t"> <b>Mail :</b> </label>
         <a href="mailto: subhomkole5@gmail.com">subhomkole5@gmail.com</a>
-    
   </div>
+  </div>
+
 </body>
 <script>
   function sub() {
@@ -126,9 +110,9 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       .then(response => {
         success.innerHTML = "Data Successfully Submitted";
-        document.getElementById('cover').style.display = 'none';
-        document.getElementById('middle').style.display = 'block';
-        document.getElementById('Conferm_Page').style.display = 'block';
+        document.getElementById('cv1').style.display = 'none';
+        
+        document.getElementById('link').style.display = 'block';
         setTimeout(function() {
           success.innerHTML = "";
         }, 5000)
