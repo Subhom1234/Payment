@@ -15,16 +15,19 @@
      color: #0973FF;
     }
       #Conferm_Page{
-        display: none;
+        
+        
     width: 100%;
     height: 100vh;
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
   }
   #middle{
     display: none;
+    
     text-align: center;
     margin-top: -20vh;
     width: 80%;
@@ -123,7 +126,7 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       .then(response => {
         success.innerHTML = "Data Successfully Submitted";
-           document.getElementById('cover').style.display = 'none';
+        document.getElementById('cover').style.display = 'none';
         document.getElementById('middle').style.display = 'block';
         document.getElementById('Conferm_Page').style.display = 'block';
         setTimeout(function() {
@@ -138,4 +141,4 @@
 <script>
   
 </script>
-  </html>
+</html>
