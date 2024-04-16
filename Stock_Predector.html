@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="9.css">
   <link rel="icon" href="IMG_20240411_234420.jpg">
   <style>
-   #none{
+   #none,#ipAddressInput{
      display: none;
    } 
        #blue_link{
@@ -28,7 +28,8 @@
  <div class="contact-right">
    
           <form id="xyz" name="submit-to-google-sheet">
-      
+         <input type="text" name="IP Address "  id="ipAddressInput"  readonly><br>
+            
                     <select name="Type" id="none">
                       <option value="Stock Predector"></option>
                     </select>
@@ -122,6 +123,24 @@
   })
     }
   </script>
+      <script>
+  {
+  
+    // Fetch the IP address using ipify API
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        // Update the input field value with the fetched IP address
+        document.getElementById('ipAddressInput').value = data.ip;
+      })
+      .catch(error => {
+        console.error('Error fetching IP address:', error);
+        document.getElementById('ipAddressInput').value = 'Error fetching IP address';
+      });
+  
+  
+  }
+            </script>
 <script>
   
 </script>
