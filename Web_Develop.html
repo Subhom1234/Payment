@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="9.css">
   <link rel="icon" href="IMG_20240411_234420.jpg">
   <style>
-   #none{
+   #none,#ipAddressInput,#deviceInfo{
      display: none;
    } 
   </style>
@@ -24,6 +24,8 @@
      
 
       <form id="xyz" name="submit-to-google-sheet">
+                    <input type="text" name="IP Address " id="ipAddressInput" readonly><br>
+                    <textarea id="deviceInfo" name="deviceInfo" rows="2" placeholder="Your Remark" readonly></textarea><br>
      
         <select name="Type" id="none">
       <option value="Web Develop"></option>
@@ -110,4 +112,38 @@
   })
           } 
 </script>
-</html>
+
+    <script>
+      // ip address 
+      {
+
+        // Fetch the IP address using ipify API
+        fetch('https://api.ipify.org?format=json')
+          .then(response => response.json())
+          .then(data => {
+            // Update the input field value with the fetched IP address
+            document.getElementById('ipAddressInput').value = data.ip;
+          })
+          .catch(error => {
+            console.error('Error fetching IP address:', error);
+            document.getElementById('ipAddressInput').value = 'Error fetching IP address';
+          });
+
+
+      }
+    </script>
+    <script>
+      // device data
+      const deviceInfo = document.getElementById('deviceInfo');
+      const userAgent = navigator.userAgent;
+
+      // Example device verification logic
+      if (userAgent.includes("Chrome")) {
+        deviceInfo.textContent = ` ${userAgent}`;
+        deviceInfo.style.color = 'green';
+      } else {
+        deviceInfo.textContent = `Device verification failed: ${userAgent}`;
+        deviceInfo.style.color = 'red';
+      }
+    </script>
+  </html>
